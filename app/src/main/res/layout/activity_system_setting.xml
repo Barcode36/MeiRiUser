@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/base_bg">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/tv_change_password"
+            android:text="修改密码"
+            style="@style/mysTvStyles"
+            />
+
+        <View
+            style="@style/viewLine"
+            android:layout_marginLeft="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_feedback"
+            android:text="意见反馈"
+            style="@style/mysTvStyles"
+            />
+
+        <View
+            style="@style/viewLine"
+            android:layout_marginLeft="14dp"/>
+
+
+        <TextView
+            android:id="@+id/tv_about_us"
+            android:text="关于我们"
+            style="@style/mysTvStyles"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="版本号"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.01"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:text="@string/text_logout"
+        android:background="@drawable/shape_fillet_green_6dp"/>
+
+
+
+
+
+</LinearLayout>

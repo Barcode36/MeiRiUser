@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/colorPrimary"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp">
+
+    <TextView
+        android:id="@+id/tv_select_address"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        android:paddingRight="14dp"
+        android:gravity="center_vertical"
+        android:maxLength="10"
+        android:ellipsize="end"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="36dp"
+        android:background="@drawable/bg_search_white">
+
+        <ImageView
+            android:id="@+id/image_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/icon_search_white"
+            android:layout_centerVertical="true"
+            android:paddingLeft="12dp"
+            android:paddingRight="2dp"/>
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@null"
+            android:padding="8dp"
+            android:textSize="14sp"
+            android:textColorHint="@color/colorHint"
+            android:textColor="@color/colorTv"
+            android:layout_toRightOf="@id/image_search"
+            android:hint="输入商家名称"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="取消"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        android:layout_marginLeft="14dp"
+        android:gravity="center_vertical"
+        />
+
+</LinearLayout>

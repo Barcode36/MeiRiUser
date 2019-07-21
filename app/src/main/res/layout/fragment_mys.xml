@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:background="@drawable/shape_gradual_green"
+        android:paddingLeft="16dp"
+        android:paddingRight="14dp">
+
+        <ImageView
+            android:id="@+id/iv_customer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_customer"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="18dp"
+            android:layout_alignParentRight="true"/>
+
+
+        <LinearLayout
+            android:id="@+id/line_person_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/iv_customer">
+
+            <ImageView
+                android:id="@+id/iv_head"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@mipmap/icon_logo_oval"
+                />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    android:layout_marginTop="16dp"
+                    android:drawableLeft="@mipmap/icon_phone_white"
+                    android:drawablePadding="10dp"
+                    />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_open_white"
+                android:layout_gravity="center_vertical"
+                />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_my_balance"
+                android:text="我的余额"
+                style="@style/mysTvStyles"
+                />
+
+            <View
+                style="@style/viewLine"/>
+
+            <TextView
+                android:id="@+id/tv_notifi_center"
+                android:text="通知中心"
+                style="@style/mysTvStyles"
+                />
+
+            <View
+                style="@style/viewLine"/>
+
+
+            <TextView
+                android:id="@+id/tv_become_rider"
+                android:text="成为骑手"
+                style="@style/mysTvStyles"
+                />
+
+            <View
+                style="@style/viewLine"/>
+
+            <TextView
+                android:id="@+id/tv_merchant_entry"
+                android:text="商家入驻"
+                style="@style/mysTvStyles"
+                />
+
+            <View
+                style="@style/viewLine"/>
+
+            <TextView
+                android:id="@+id/tv_system_setting"
+                android:text="系统设置"
+                style="@style/mysTvStyles"
+                />
+
+            <View
+                style="@style/viewLine"/>
+
+
+
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

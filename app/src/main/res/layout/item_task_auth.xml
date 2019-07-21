@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:layout_marginBottom="10dp"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:src="@mipmap/ic_launcher"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_head"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ricardo"
+                android:textColor="@color/colorBlack"
+                android:textSize="17sp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RatingBar
+                    android:id="@+id/ratingbar"
+                    style="@style/RadingStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:stepSize="0.5"
+                    android:isIndicator="true"/>
+
+                <TextView
+                    android:id="@+id/tv_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.6"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="9dp"
+                    />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_evaluation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="专业除草, 从事园艺工作8年,速度快,修剪整齐"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="13sp"
+                android:layout_marginRight="38dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="2dp"
+
+                />
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_apply_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6分钟前"
+            android:textColor="@color/colorGray"
+            android:textSize="13sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/viewLine"
+        android:layout_marginTop="18dp"/>
+
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_width="94dp"
+        android:layout_height="36dp"
+        android:text="匹配"
+        android:textColor="#fffffefe"
+        android:textSize="15sp"
+        android:background="@drawable/shape_fillet_green_4dp"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:layout_gravity="right"
+        />
+
+</LinearLayout>

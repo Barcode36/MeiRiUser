@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/line_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:background="@color/colorWhite"
+    android:padding="14dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+  <ImageView
+      android:id="@+id/iv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="10dp"
+      android:src="@mipmap/icon_errands"
+      android:layout_marginTop="2dp"/>
+
+    <TextView
+        android:id="@+id/tv_order_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="代购订单"
+        android:textColor="@color/colorGreen"
+        android:textSize="18sp"
+        android:layout_toRightOf="@id/iv"
+        />
+
+
+        <TextView
+            android:id="@+id/tv_order_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            android:gravity="right"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignLeft="@id/tv_order_type"
+            android:layout_below="@id/tv_order_type">
+
+
+            <TextView
+                android:id="@+id/tv_substitute_shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="jdiji"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:text="@string/text_purchase"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="13sp"
+                    android:background="@drawable/shape_circular_green"
+                    android:gravity="center"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_take_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorGray"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp">
+
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:text="@string/text_collect"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="13sp"
+                    android:background="@drawable/shape_circular_gray"
+                    android:gravity="center"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_collect_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorGray"
+                        android:textSize="16sp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="张先生收  15766376065"
+                        android:textColor="@color/colorGray"
+                        android:textSize="16sp"
+                        android:layout_marginTop="6dp"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="right">
+
+                <Button
+                    android:id="@+id/btn_cancel_order"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_fillet_gray_6dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorWhite"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/text_cancel_order"
+                    android:visibility="gone"/>
+
+
+                <Button
+                    android:id="@+id/btn_contact_riders"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_fillet_green_6dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorWhite"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/text_contact_riders"/>
+
+            </LinearLayout>
+
+
+           <!-- <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_text_contact_riders_tips"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                />-->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

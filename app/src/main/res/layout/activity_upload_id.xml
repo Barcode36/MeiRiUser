@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+
+    <include layout="@layout/include_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="16dp">
+
+        <FrameLayout
+            android:id="@+id/line_passport"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_fillet_gray_2dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击上传护照"
+                android:textColor="@color/gray2"
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:drawableLeft="@mipmap/icon_upload"
+                android:gravity="center_vertical"
+                android:drawablePadding="14dp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_passport"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/line_visa"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_fillet_gray_2dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击上传签证"
+                android:textColor="@color/gray2"
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:drawableLeft="@mipmap/icon_upload"
+                android:gravity="center_vertical"
+                android:drawablePadding="14dp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_visa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/line_driver_license"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_fillet_gray_2dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击上传澳洲驾驶证"
+                android:textColor="@color/gray2"
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:drawableLeft="@mipmap/icon_upload"
+                android:gravity="center_vertical"
+                android:drawablePadding="14dp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_driver_license"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

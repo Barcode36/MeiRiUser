@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingRight="14dp"
+    android:paddingLeft="14dp"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="18dp"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:id="@+id/iv_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_notice"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="9dp"/>
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@id/iv_notice">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="提现成功通知"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="2018-3-8"
+                android:textColor="@color/colorGray"
+                android:textSize="12sp"
+                />
+
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@id/iv_notice"
+            android:layout_below="@id/line"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您在2019/3/8的操作提现已到账,立即查看详情"
+                android:textColor="@color/colorGray"
+                android:textSize="12sp"
+                android:drawableRight="@mipmap/icon_notice_arrow"
+                android:drawablePadding="8dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:background="@drawable/shape_ovel_red_small"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <View
+        style="@style/viewLine"/>
+
+</LinearLayout>

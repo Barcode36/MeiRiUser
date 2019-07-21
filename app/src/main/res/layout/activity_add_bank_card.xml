@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="40dp"
+            android:paddingBottom="20dp">
+
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="信用卡号码*"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+
+            <FrameLayout
+                android:id="@+id/line_bank_num"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:background="@drawable/shape_fillet_gray_stroke_4dp"
+                android:layout_marginTop="12dp"
+                android:padding="13dp">
+
+                <EditText
+                    android:id="@+id/et_bank_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:inputType="text"
+                    android:background="@null"
+                    android:textColorHint="#BBBBBB"
+                    android:hint="请输入信用卡卡号"
+                    android:gravity="left|top"
+                    android:textSize="14sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_small_drop_down"
+                    android:layout_gravity="right"
+                    />
+            </FrameLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有效日期至*"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:layout_marginTop="26dp"
+                />
+
+
+            <EditText
+                android:id="@+id/et_bank_date"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:textColor="@color/colorBlack"
+                android:inputType="text"
+                android:textColorHint="#BBBBBB"
+                android:background="@drawable/shape_fillet_gray_stroke_4dp"
+                android:layout_marginTop="12dp"
+                android:padding="13dp"
+                android:hint="月份年份"
+                android:gravity="left|top"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="安全码*"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:layout_marginTop="27dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_safety_code"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="41dp"
+                    android:background="@drawable/shape_fillet_gray_stroke_4dp"
+                    android:textColor="@color/colorBlack"
+                    android:inputType="text"
+                    android:padding="13dp"
+                    android:textColorHint="#BBBBBB"
+                    android:gravity="left|top"
+                    android:textSize="14sp"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:id="@+id/tv_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="这是什么?"
+                    android:textColor="#ff74d1bf"
+                    android:textSize="13sp"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center_vertical">
+
+
+                <CheckBox
+                    android:id="@+id/is_checkbox"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:background="@drawable/selector_radio_green"
+                    android:layout_marginRight="17dp"
+                    android:button="@null"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保存银行卡"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_confirm_payment"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:text="立即付款"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                android:background="@drawable/shape_fillet_green_6dp"
+                android:layout_marginTop="60dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

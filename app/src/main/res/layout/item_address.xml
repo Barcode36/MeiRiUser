@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/line_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="17dp">
+
+
+        <TextView
+            android:id="@+id/tv_contact_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="张宏韬  15766668888"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="浙江省杭州市西湖区文三路138号东方通信大厦"
+            android:textColor="#ff888888"
+            android:textSize="13sp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="4dp"
+            android:layout_below="@id/tv_contact_details"
+            android:layout_marginRight="60dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/iv_editor_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_editor"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/tv_address"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="3dp"/>
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_marginLeft="14dp"
+        style="@style/viewLine"/>
+
+</LinearLayout>

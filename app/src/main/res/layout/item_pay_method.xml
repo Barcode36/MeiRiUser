@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/line_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="20dp"
+    android:orientation="horizontal">
+
+
+    <ImageView
+        android:id="@+id/iv_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="38dp"
+        android:src="@mipmap/icon_pay_alipay"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微信支付"
+        android:textColor="@color/colorBlack"
+        android:textSize="15sp"
+        android:layout_marginRight="12dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="工行信用卡支付, 享随机立减"
+        android:textColor="@color/colorGray"
+        android:textSize="12sp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_select"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:src="@mipmap/icon_pay_select"/>
+
+
+</LinearLayout>
+
+    <View
+        android:layout_marginLeft="74dp"
+        style="@style/viewLine"/>
+</LinearLayout>

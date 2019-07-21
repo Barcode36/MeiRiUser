@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_payment_time"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:text="剩余支付时间  13:46"
+            android:textColor="@color/colorYellow"
+            android:textSize="12sp"
+            android:background="@color/colorYellowBg"
+            android:gravity="center"
+            />
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tv_payment_time">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="80dp"
+                android:background="@color/colorWhite">
+
+                <TextView
+                    android:id="@+id/tv_takeaway_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    style="@style/onlinePayLineStyles"
+                    android:text="外卖订单:33412823848583"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="13sp"
+                    android:gravity="center_vertical"
+                    />
+
+                <View
+                    style="@style/viewLine"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_order_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:id="@+id/line_distribu_fee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/onlinePayLineStyles"
+                    android:paddingTop="19dp">
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="配送费"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/tv_distribu_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_price"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="17sp"
+                        android:layout_alignParentRight="true"
+                        />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/line_full_reduction_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/onlinePayLineStyles"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="18dp">
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="满减优惠"
+                        android:textColor="@color/colorYellow"
+                        android:textSize="12sp"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/tv_full_reduction_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_reduct_price"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="17sp"
+                        android:layout_alignParentRight="true"
+                        />
+
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/viewLine"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    style="@style/onlinePayLineStyles">
+
+
+
+                    <TextView
+                        android:id="@+id/tv_total_commodity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="共一件商品"
+                        android:textColor="@color/colorGray"
+                        android:textSize="12sp"
+                        android:layout_marginTop="13dp"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="合计"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="12sp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@id/tv_total_price"
+                            android:layout_marginRight="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_total_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="¥6"
+                            android:textColor="@color/colorDarkGreen"
+                            android:textSize="20sp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+                <View
+                    style="@style/viewBg"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="选择支付方式"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    android:paddingTop="16dp"
+                    style="@style/onlinePayLineStyles"
+                    android:paddingBottom="16dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_pay_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+
+        <Button
+            android:id="@+id/btn_confirm_payment"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="确认支付"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:background="@color/colorDarkGreen"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

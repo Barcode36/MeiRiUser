@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_class_title"
+        android:layout_width="102dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrayBg"
+        android:paddingBottom="70dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_class_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:paddingBottom="70dp"/>
+
+
+
+</LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_margin="14dp"
+        android:layout_alignParentBottom="true">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_shop_cart_bg"
+            android:shadowDx="0"
+            android:shadowDy="4"
+            android:shadowColor="#1a666666"
+            android:layout_gravity="bottom">
+            <TextView
+                android:id="@+id/tv_shop_cart_num"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="15sp"
+                android:textColor="@color/colorHint"
+                android:text="@string/text_empty_shopping"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/tv_click_price"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_cart_right_gray_bg"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:text="¥0起送"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_shop_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:src="@mipmap/icon_shop_cart_green" />
+
+
+    </FrameLayout>
+
+
+</RelativeLayout>

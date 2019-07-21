@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tv_task_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="修整花园"
+                android:textColor="@color/colorBlack"
+                android:textSize="23sp"
+                />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp">
+
+
+                <ImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@mipmap/icon_logo"
+                    android:layout_marginRight="20dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iv_head"
+                    android:layout_alignBottom="@id/iv_head"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="发布人"
+                        android:textColor="@color/colorDarkGray"
+                        android:textSize="13sp"
+                        android:layout_marginBottom="6dp"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:id="@+id/tv_publisher_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ann yang"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17sp"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7分钟前"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="13sp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="28dp"
+                            />
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/viewLine"/>
+
+
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="海尔大街108号"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@mipmap/icon_address_task_details"
+                android:gravity="center_vertical"
+                android:drawablePadding="39dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <View
+                style="@style/viewLine"
+                android:layout_marginLeft="80dp"/>
+
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019/03/16  16:00"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@mipmap/icon_time_task_details"
+                android:gravity="center_vertical"
+                android:drawablePadding="39dp"
+                android:layout_marginBottom="10dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_fillet_gray_stroke_6dp"
+                android:layout_marginTop="36dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="任务金额"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$70"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="36sp"
+                    android:layout_marginTop="13dp"
+                    />
+                
+                <LinearLayout
+                    android:id="@+id/line_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginRight="23dp"
+                    android:layout_marginTop="14dp"
+                    android:visibility="gone">
+
+                    <View
+                        style="@style/viewLine"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="发布人如是说:"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        android:layout_marginTop="20dp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv_say_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="    我的花园需要修平草地,  对所有花园里的灌木进行修剪,  顺便帮我把花园的花都浇下水。"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        android:layout_marginTop="14dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_marginBottom="16dp"
+                        />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btn_apply"
+                    android:layout_width="218dp"
+                    android:layout_height="36dp"
+                    android:text="申请"
+                    android:textColor="#fffefefe"
+                    android:textSize="15sp"
+                    android:background="@drawable/shape_fillet_green_18dp"
+                    android:gravity="center"
+                    android:layout_marginTop="18dp"
+                    />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/btn_more"
+                android:layout_width="218dp"
+                android:layout_height="36dp"
+                android:text="更多描述"
+                android:textColor="@color/colorGray"
+                android:textSize="15sp"
+                android:background="@drawable/shape_fillet_gray_stroke_18dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp">
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/bg_search_white"
+        android:padding="8dp"
+        android:drawableLeft="@mipmap/icon_search_white"
+        android:textSize="14sp"
+        android:textColorHint="@color/colorHint"
+        android:textColor="@color/colorTv"
+        android:drawablePadding="9dp"
+        android:hint="@string/hint_company_name"
+        />
+
+
+
+</LinearLayout>

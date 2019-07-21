@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_fillet_white_6dp"
+    android:orientation="vertical"
+    android:padding="14dp"
+    android:gravity="center_horizontal">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_tips"/>
+
+
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您尚未缴纳保证金"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="15sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="22dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_to_pay"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:text="前往缴纳"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        android:background="@drawable/shape_fillet_green_6dp"
+        android:gravity="center"
+        />
+
+
+
+
+</LinearLayout>

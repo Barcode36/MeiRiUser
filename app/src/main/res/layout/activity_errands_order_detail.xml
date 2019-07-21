@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_distribution_address"
+                    android:textColor="@color/colorGray"
+                    android:textSize="15sp"
+                    android:paddingTop="16dp"
+                    style="@style/onlinePayLineStyles"
+                    android:paddingBottom="16dp"
+                    />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp">
+
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:text="@string/text_take"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="13sp"
+                        android:background="@drawable/shape_circular_green"
+                        android:gravity="center"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv_take_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="阿汤厨房(车陂店)"
+                        android:textColor="@color/colorGray"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="20dp"
+                        />
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp">
+
+
+                    <TextView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:text="@string/text_collect"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="13sp"
+                        android:background="@drawable/shape_circular_gray"
+                        android:gravity="center"
+                        />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_collect_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="阿汤厨房(车陂店)"
+                            android:textColor="@color/colorGray"
+                            android:textSize="16sp"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/tv_contact"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="张先生收  15766376065"
+                            android:textColor="@color/colorGray"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    style="@style/viewBg"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_order_detail"
+                    android:textColor="@color/colorGray"
+                    android:textSize="15sp"
+                    android:paddingTop="16dp"
+                    style="@style/onlinePayLineStyles"
+                    android:paddingBottom="16dp"
+                    />
+
+
+                <View
+                    style="@style/viewLine"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_substitute_shopping"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv_substitute_shopping"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <View
+                    style="@style/viewLine"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_commodity_charges"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv_commodity_charges"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+
+                <View
+                    style="@style/viewLine"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_distribution_fee"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv_distribution_fee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <View
+                    style="@style/viewLine"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_gratuity"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv_gratuity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+
+
+
+                <View
+                    style="@style/viewBg"/>
+
+                <TextView
+                    android:id="@+id/tv_pay_method"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_select_pay_method"
+                    android:textColor="@color/colorGray"
+                    android:textSize="15sp"
+                    android:paddingTop="16dp"
+                    style="@style/onlinePayLineStyles"
+                    android:paddingBottom="16dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_pay_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@color/base_bg"/>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorWhite"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="14dp">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_total_price"
+                android:textColor="@color/colorBlack"
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                />
+
+            <Button
+                android:id="@+id/btn_pay"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDarkGreen"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:layout_alignParentRight="true"
+                android:text="@string/text_sure_pay"/>
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AU$"
+                android:textColor="@color/colorOrange"
+                android:textSize="17sp"
+                android:layout_toLeftOf="@id/tv_order_price"
+                android:layout_centerVertical="true"
+                android:gravity="right"
+                />
+
+            <TextView
+                android:id="@+id/tv_order_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="70"
+                android:textColor="@color/colorOrange"
+                android:textSize="26sp"
+                android:layout_toLeftOf="@id/btn_pay"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="13dp"
+                />
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

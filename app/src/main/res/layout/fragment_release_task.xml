@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:paddingLeft="28dp"
+    android:paddingRight="28dp"
+    android:paddingTop="30dp"
+    android:paddingBottom="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/line_task_clean"
+            style="@style/releaseTaskTypeLineStyles"
+            android:layout_marginRight="14dp">
+
+        <TextView
+            style="@style/releaseTaskTypeTvStyles"
+            android:drawableTop="@mipmap/icon_task_clean"
+            android:text="清洁" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_task_install"
+            style="@style/releaseTaskTypeLineStyles"
+            android:layout_marginRight="14dp">
+
+            <TextView
+                style="@style/releaseTaskTypeTvStyles"
+                android:drawableTop="@mipmap/icon_task_install"
+                android:text="安装" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_task_repair"
+            style="@style/releaseTaskTypeLineStyles">
+
+            <TextView
+                style="@style/releaseTaskTypeTvStyles"
+                android:drawableTop="@mipmap/icon_task_repair"
+                android:text="水电维修" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:id="@+id/line_ask_delivery"
+            style="@style/releaseTaskTypeLineStyles"
+            android:layout_marginRight="14dp">
+
+            <TextView
+                style="@style/releaseTaskTypeTvStyles"
+                android:drawableTop="@mipmap/icon_task_delivery"
+                android:text="配送" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_task_gardening"
+            style="@style/releaseTaskTypeLineStyles"
+            android:layout_marginRight="14dp">
+
+            <TextView
+                style="@style/releaseTaskTypeTvStyles"
+                android:drawableTop="@mipmap/icon_task_gardening"
+                android:text="园艺" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_task_moving"
+            style="@style/releaseTaskTypeLineStyles">
+
+            <TextView
+                style="@style/releaseTaskTypeTvStyles"
+                android:drawableTop="@mipmap/icon_task_moving"
+                android:text="搬家" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:id="@+id/line_task_finance"
+            style="@style/releaseTaskTypeLineStyles"
+            android:layout_marginRight="14dp">
+
+            <TextView
+                style="@style/releaseTaskTypeTvStyles"
+                android:drawableTop="@mipmap/icon_task_finance"
+                android:text="财务管理" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_task_computer"
+            style="@style/releaseTaskTypeLineStyles"
+            android:layout_marginRight="14dp">
+
+            <TextView
+                style="@style/releaseTaskTypeTvStyles"
+                android:drawableTop="@mipmap/icon_task_computer"
+                android:text="电脑维修" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_task_photography"
+            style="@style/releaseTaskTypeLineStyles">
+
+            <TextView
+                style="@style/releaseTaskTypeTvStyles"
+                android:drawableTop="@mipmap/icon_task_photography"
+                android:text="摄影" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/line_task_more"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:background="@drawable/shape_circular_gray_stroke"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="42dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:drawableTop="@mipmap/icon_task_more"
+            android:textSize="14sp"
+            android:textColor="@color/colorBlack"
+            android:drawablePadding="15dp"
+            android:layout_marginTop="8dp"
+            android:text="更多" />
+
+    </LinearLayout>
+
+</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

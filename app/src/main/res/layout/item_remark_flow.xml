@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_remarks"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="#需自带除草机"
+    android:textColor="@color/colorDarkGreen"
+    android:textSize="10sp"
+    android:layout_marginTop="14dp"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:background="@drawable/shape_fillet_green_stroke_11dp"
+    android:layout_marginRight="10dp"
+    />

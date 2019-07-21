@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/base_bg">
+
+    <include layout="@layout/include_toolbar"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/shape_fillet_white_6dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_shape_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="彩虹美甲店"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            android:drawableRight="@mipmap/icon_open"
+            />
+
+        <View
+            style="@style/viewLine"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <TextView
+            android:id="@+id/tv_group_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="七彩美甲套餐"
+            android:textColor="@color/colorBlack"
+            android:textSize="17sp"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019-03-19  20:30:58"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="验证码"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WSF5 KW9"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:layout_centerHorizontal="true"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="12dp"
+                android:paddingLeft="12dp"
+                android:background="@drawable/shape_fillet_yellow_stroke"
+                android:textColor="@color/colorYellow"
+                android:textSize="12sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:text="已完成"
+                android:visibility="gone"/>
+
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_code"
+            android:layout_width="168dp"
+            android:layout_height="168dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="26dp"
+            android:scaleType="centerCrop"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

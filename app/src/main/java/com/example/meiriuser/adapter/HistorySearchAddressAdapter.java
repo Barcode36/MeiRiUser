@@ -1,0 +1,28 @@
+package com.example.meiriuser.adapter;
+
+
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
+import com.example.meiriuser.R;
+import com.example.meiriuser.model.AddressModel;
+
+import java.util.List;
+
+/**
+ * Created by admin on 2019/6/17.
+ */
+
+public class HistorySearchAddressAdapter  extends BaseQuickAdapter<AddressModel, BaseViewHolder> {
+
+    public HistorySearchAddressAdapter(List<AddressModel> list) {
+        super(R.layout.item_history_search_address, list);
+    }
+
+    @Override
+    protected void convert(BaseViewHolder helper, AddressModel item) {
+        helper.setText(R.id.tv_address,item.getAddress());
+        helper.addOnClickListener(R.id.iv_cancel);
+        helper.addOnClickListener(R.id.line_item);
+    }
+
+}

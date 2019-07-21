@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你的房屋类型"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right"
+                android:textSize="14sp"
+                />
+
+
+            <com.flyco.tablayout.SegmentTabLayout
+                android:id="@+id/tl_segment"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                tl:tl_bar_color="#ffffff"
+                tl:tl_indicator_color="#74D1BF"
+                tl:tl_tab_width="120dp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right"
+                tl:tl_textsize="14sp"
+                android:layout_marginTop="16dp"/>
+
+            <View
+                style="@style/viewLine"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有多少间卧室?"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_bedroom_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="26dp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有多少间洗手间?"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right"
+                android:layout_marginTop="20dp"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_restroom_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="26dp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right" />
+
+
+            <View
+                style="@style/viewLine"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="23dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="这是否是租赁结束后的清洁任务?"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="right"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="否"
+                    android:textColor="@color/colorGray"
+                    android:textSize="17sp"
+                    />
+
+
+                <ToggleButton
+                    android:id="@+id/is_switch"
+                    android:layout_width="64dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:button="@drawable/selector_switch"
+                    android:textOff=""
+                    android:textOn=""
+                    android:background="@android:color/transparent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                    android:textColor="@color/colorGray"
+                    android:textSize="17sp"
+                    />
+
+            </LinearLayout>
+
+            <View
+                style="@style/viewLine"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="18dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加其他清洁内容"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_clean_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginRight="12dp" />
+
+
+            <View
+                style="@style/viewLine"
+                android:layout_marginTop="12dp"/>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="下一步"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_fillet_green_18dp"
+                />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

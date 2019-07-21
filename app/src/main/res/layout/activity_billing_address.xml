@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <TextView
+        android:id="@+id/tv_upload_id"
+        android:text="上传身份证件 (护照/签证/澳洲驾照)"
+        style="@style/billingAddressTvStyles"
+        />
+
+    <View
+       style="@style/viewLine"
+        android:layout_marginRight="14dp"
+        android:layout_marginLeft="14dp"/>
+
+
+    <TextView
+        android:id="@+id/tv_billing_address"
+        android:text="提供账单地址"
+        style="@style/billingAddressTvStyles"
+        />
+
+    <View
+        style="@style/viewLine"
+        android:layout_marginRight="14dp"
+        android:layout_marginLeft="14dp"/>
+</LinearLayout>

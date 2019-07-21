@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/line_head"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="头像"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginRight="18dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_open_black"/>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="14dp"
+        style="@style/viewLine"/>
+
+    <LinearLayout
+        android:id="@+id/line_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="昵称"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="LISA"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15sp"
+            android:gravity="right"
+            android:paddingRight="18dp"
+            android:background="@null"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_open_black"/>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="14dp"
+        style="@style/viewLine"/>
+
+
+    <LinearLayout
+        android:id="@+id/line_sex"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="性别"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_sex"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="女"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15sp"
+            android:gravity="right"
+            android:layout_marginRight="18dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_open_black"/>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="14dp"
+        style="@style/viewLine"/>
+
+    <LinearLayout
+        android:id="@+id/line_receiving_address"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="收货地址"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_open_black"/>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="14dp"
+        style="@style/viewLine"/>
+
+
+
+</LinearLayout>

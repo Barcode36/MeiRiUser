@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:background="@color/colorWhite"
+    android:paddingTop="17dp">
+
+    <ImageView
+        android:id="@+id/iv_food"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginRight="16dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="咖喱鸡肉饭"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/iv_food"
+        android:layout_marginTop="2dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_food_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微辣/不含汤"
+        android:textColor="@color/colorGray"
+        android:layout_toRightOf="@id/iv_food"
+        android:layout_below="@id/tv_food_name"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:textSize="12sp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x1"
+        android:textColor="@color/colorGray"
+        android:layout_toRightOf="@id/iv_food"
+        android:layout_below="@id/tv_food_content"
+        android:textSize="12sp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¥21"
+        android:textColor="@color/colorBlack"
+        android:textSize="17sp"
+        android:layout_alignParentRight="true"
+        />
+
+
+</RelativeLayout>

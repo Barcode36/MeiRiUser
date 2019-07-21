@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您希望对方什么时间来完成任务呢?"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                />
+
+
+            <FrameLayout
+                android:id="@+id/line_time"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/shape_fillet_gray_stroke_4dp"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择完成日期"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@mipmap/icon_small_date"
+                    android:drawablePadding="10dp"
+                    />
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center_vertical">
+
+
+                <CheckBox
+                    android:id="@+id/is_checkbox"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:background="@drawable/selector_radio_green"
+                    android:layout_marginRight="10dp"
+                    android:button="@null"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="希望在确定的时间段来完成任务"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="132dp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:id="@+id/line_morning"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginRight="13dp"
+                    android:padding="8dp"
+                    android:background="@drawable/shape_fillet_gray_stroke_6dp">
+
+                    <CheckBox
+                        android:id="@+id/is_checkbox_morning"
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:background="@drawable/selector_radio_green"
+                        android:button="@null"
+                        android:layout_gravity="right"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_clock_morning"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="上午"
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="15sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="4dp"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_task_morning"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="13sp"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/line_noon"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@drawable/shape_fillet_gray_stroke_6dp">
+
+
+                    <CheckBox
+                        android:id="@+id/is_checkbox_noon"
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:background="@drawable/selector_radio_green"
+                        android:button="@null"
+                        android:layout_gravity="right"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_clock_noon"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="中午"
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="15sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="4dp"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_task_noon"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="13sp"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="132dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+
+                <LinearLayout
+                    android:id="@+id/line_afternoon"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginRight="13dp"
+                    android:padding="8dp"
+                    android:background="@drawable/shape_fillet_gray_stroke_6dp">
+
+                    <CheckBox
+                        android:id="@+id/is_checkbox_afternoon"
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:background="@drawable/selector_radio_green"
+                        android:button="@null"
+                        android:layout_gravity="right"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_clock_afternoon"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="下午"
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="15sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="4dp"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_task_afternoon"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="13sp"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/line_night"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@drawable/shape_fillet_gray_stroke_6dp">
+
+
+                    <CheckBox
+                        android:id="@+id/is_checkbox_night"
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:background="@drawable/selector_radio_green"
+                        android:button="@null"
+                        android:layout_gravity="right"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_clock_night"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="晚上"
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="15sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="4dp"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_task_night"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="13sp"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您也可以稍后和任务人一起确定准确的时间"
+                android:textColor="@color/colorGray"
+                android:textSize="13sp"
+                android:layout_marginTop="20dp"
+                />
+
+
+            <View
+                style="@style/viewLine"
+                android:layout_marginTop="50dp"/>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="下一步"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_fillet_green_18dp"
+                />
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_gradual_green"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="232dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:background="@drawable/shape_gradual_green">
+
+
+            <RelativeLayout
+                android:id="@+id/appBar"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp">
+
+                <ImageView
+                    android:id="@+id/icon_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="14dp"
+                    android:paddingTop="14dp"
+                    android:paddingRight="14dp"
+                    android:src="@mipmap/icon_back"/>
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    android:gravity="center_vertical"
+                    android:text="头部"
+                    android:layout_centerHorizontal="true"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shape_shadow_white_10dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_click_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="绑定银行卡"
+                android:textColor="@color/colorGray"
+                android:textSize="13sp"
+                android:layout_alignParentRight="true"
+                />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tv_click_bank">
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.48"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="49sp"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AU$"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="15sp"
+                    />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_withdrawal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/shape_fillet_green_6dp"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:text="提现"/>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp">
+
+
+        <LinearLayout
+            android:id="@+id/line_payment_details"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收支明细"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="账单地址"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:gravity="right"
+                android:layout_marginRight="18dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_open_black"/>
+
+
+        </LinearLayout>
+
+        <View
+            style="@style/viewLine"/>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="任务标题"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_fillet_gray_stroke_4dp"
+                android:layout_marginTop="12dp"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/et_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="54dp"
+                    android:textColor="@color/colorBlack"
+                    android:inputType="textMultiLine"
+                    android:background="@null"
+                    android:textColorHint="#BBBBBB"
+                    android:hint="请输入标题"
+                    android:gravity="left|top"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tv_title_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#BBBBBB"
+                    android:layout_gravity="bottom|right"
+                    android:gravity="right"
+                    android:textSize="14sp"
+                    android:text="0/15"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="具体详情"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_fillet_gray_stroke_4dp"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:padding="10dp">
+
+
+                <EditText
+                    android:id="@+id/et_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="118dp"
+                    android:textColor="@color/colorBlack"
+                    android:inputType="textMultiLine"
+                    android:background="@null"
+                    android:hint="请输入任务详情"
+                    android:textColorHint="#BBBBBB"
+                    android:gravity="left|top"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tv_content_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#BBBBBB"
+                    android:layout_gravity="bottom|right"
+                    android:gravity="right"
+                    android:textSize="14sp"
+                    android:text="0/100"/>
+        </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="这项任务可以在网上完成"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:layout_centerVertical="true"
+                    />
+
+                <ToggleButton
+                    android:id="@+id/is_switch"
+                    android:layout_width="64dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:button="@drawable/selector_switch"
+                    android:textOff=""
+                    android:textOn=""
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
+            <View
+                style="@style/viewLine"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加必要信息:"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.zhy.view.flowlayout.TagFlowLayout
+                    android:id="@+id/id_flowlayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp">
+                </com.zhy.view.flowlayout.TagFlowLayout>
+
+                <ImageView
+                    android:id="@+id/iv_add_flow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_plus"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/viewLine"/>
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/img_flowlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="12dp">
+            </com.zhy.view.flowlayout.TagFlowLayout>
+
+
+            <FrameLayout
+                android:id="@+id/line_photo"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/shape_fillet_gray_stroke_4dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拍照上传更多信息"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@mipmap/icon_small_camera"
+                    android:drawablePadding="10dp"
+                    />
+
+            </FrameLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="任务地址"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <FrameLayout
+                android:id="@+id/line_task_address"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/shape_fillet_gray_stroke_4dp">
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="请选择"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@mipmap/icon_small_address_gray"
+                    android:drawablePadding="10dp"
+                    />
+
+            </FrameLayout>
+
+
+            <View
+                style="@style/viewLine"
+                android:layout_marginTop="12dp"/>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="下一步"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                android:layout_marginLeft="@dimen/dimens_task_margin_left"
+                android:layout_marginRight="@dimen/dimens_task_margin_right"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_fillet_green_18dp"
+                />
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>
