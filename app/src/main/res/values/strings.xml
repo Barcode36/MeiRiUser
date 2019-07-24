@@ -347,6 +347,8 @@
     <string name="text_bind_success">绑定成功</string>
     <string name="text_unbind_success">解除绑定成功</string>
     <string name="text_withdrawal_suffcess">提现申请成功</string>
+    <string name="text_cancel_success">取消成功</string>
+    <string name="text_confir_success">确认成功</string>
     <!--<string name="text_forget_password">忘记密码</string>
 -->
 </resources>

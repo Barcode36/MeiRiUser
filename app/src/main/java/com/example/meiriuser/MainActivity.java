@@ -105,7 +105,7 @@ public class MainActivity extends BaseActivity
     public void initView() {
         token=PreferenceUtil.getString(Constant.PF_TOKEN_KEY);
         maintainFragment=new MaintainFragment();
-        getRxPermissions().request(Manifest.permission.ACCESS_COARSE_LOCATION)
+        getRxPermissions().request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
                 .subscribe(new Action1<Boolean>() {
                     @Override
                     public void call(Boolean aBoolean) {
@@ -116,6 +116,8 @@ public class MainActivity extends BaseActivity
                         }
                     }
                 });
+
+
         //定位
         locationRequest = LocationRequest.create()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)

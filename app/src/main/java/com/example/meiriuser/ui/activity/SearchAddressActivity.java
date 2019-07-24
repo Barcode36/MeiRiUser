@@ -314,7 +314,7 @@ public class SearchAddressActivity extends BaseActivity implements
         }
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (mLastLocation != null) {
-            LatLng lastLatLng = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+           /* LatLng lastLatLng = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());*/
             if (!Geocoder.isPresent()) {
                 Toast.makeText(this, "No geocoder available", Toast.LENGTH_LONG).show();
                 return;
@@ -352,6 +352,7 @@ public class SearchAddressActivity extends BaseActivity implements
     @Override
     public void onLocationChanged(Location location) {
         if (location != null) {
+
             getLocationAddress(location.getLatitude(),location.getLongitude());
         } else {
             ToastUtils.showShort("", getString(R.string.toast_map_location_failed));

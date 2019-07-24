@@ -39,7 +39,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -69,9 +71,11 @@ public class TaskListFragment extends BaseFragment {
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
     int pageNo = Constant.PAGENO;
-    int distance;
-    int price;
     AddressModel changeaddressModel;
+    String priceTask="";
+    String distanceTask="";
+    String longitudeTask="";
+    String latitudeTask="";
 
     @Override
     protected int provideContentViewId() {
@@ -86,17 +90,24 @@ public class TaskListFragment extends BaseFragment {
     }
 
 
-    public void getTaskList(int pageNo,int flag) {
+    public void getTaskList(int pageNo,int flag,String price,String distance,String longitude, String latitude) {
         if(flag==Constant.SHOW_DIALOG){
             showDialog();
         }
         String url = ApiUrl.taskListUrl;
+        Map<String,String> param=new HashMap<>();
+        param.put("page", String.valueOf(pageNo));
+        param.put("size", Constant.MAXCOUNT);
+        param.put("price", price);
+        param.put("distance", distance);
+        param.put("longitude", longitude);
+        param.put("latitude", latitude);
+        param.put("type", 1+"");
+
         OkHttpUtils
                 .get()
                 .url(url)
-                .addParams("page", String.valueOf(pageNo))
-                .addParams("size", Constant.MAXCOUNT)
-                .addParams("type", 1+"")
+                .params(param)
                 .addHeader("token", PreferenceUtil.getString(Constant.PF_TOKEN_KEY))
                 .build()
                 .execute(new StringCallback() {
@@ -115,6 +126,7 @@ public class TaskListFragment extends BaseFragment {
                             if (result == 1) {
                                 TaskListModel bean = (TaskListModel) GsonUtil.JSONToObject(response.toString(), TaskListModel.class);
                                 if (bean.getData() != null) {
+                                    taskListModelList.clear();
                                     taskListModelList.addAll(bean.getData());
                                     taskListAdapter.notifyDataSetChanged();
                                 }
@@ -135,7 +147,7 @@ public class TaskListFragment extends BaseFragment {
     public void initData() {
         taskListAdapter = new TaskListAdapter(taskListModelList);
         rvList.setAdapter(taskListAdapter);
-        getTaskList(pageNo,Constant.SHOW_DIALOG);
+        getTaskList(pageNo,Constant.SHOW_DIALOG,priceTask,distanceTask,longitudeTask,latitudeTask);
     }
 
 
@@ -163,7 +175,7 @@ public class TaskListFragment extends BaseFragment {
                     public void call(LoginRefreshEvent event) {
                         taskListModelList.clear();
                         taskListAdapter.notifyDataSetChanged();
-                        getTaskList(pageNo,Constant.NO_SHOW_DIALOG);
+                        getTaskList(pageNo,Constant.NO_SHOW_DIALOG,priceTask,distanceTask,longitudeTask,latitudeTask);
                     }
                 });
 
@@ -186,7 +198,7 @@ public class TaskListFragment extends BaseFragment {
                 taskListModelList.clear();
                 taskListAdapter.notifyDataSetChanged();
                 pageNo=Constant.PAGENO;
-                getTaskList(pageNo,Constant.SHOW_DIALOG);
+                getTaskList(pageNo,Constant.SHOW_DIALOG,priceTask,distanceTask,longitudeTask,latitudeTask);
             }
         });
 
@@ -220,8 +232,15 @@ public class TaskListFragment extends BaseFragment {
         if(resultCode==1){
             if (data != null) {
                 changeaddressModel = (AddressModel) data.getExtras().getSerializable("address");
-                distance=data.getExtras().getInt("distance");
-                price=data.getExtras().getInt("price_tasks");
+                distanceTask=data.getExtras().getInt("distance")+"";
+                priceTask=data.getExtras().getString("price_tasks");
+                if(changeaddressModel!=null){
+                    longitudeTask=changeaddressModel.getLongitude()+"";
+                    latitudeTask=changeaddressModel.getLatitude()+"";
+                }
+                tvDistance.setText(distanceTask+"km内");
+                tvContent.setText(priceTask);
+                getTaskList(pageNo,Constant.SHOW_DIALOG,priceTask,distanceTask,longitudeTask,latitudeTask);
             }
         }
 

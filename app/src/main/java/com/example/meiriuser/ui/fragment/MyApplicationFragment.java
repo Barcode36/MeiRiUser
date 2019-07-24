@@ -120,9 +120,10 @@ public class MyApplicationFragment extends BaseFragment {
 
 
 
-    public void taskStatus(int task_id, int status) {
+
+    public void taskMutualStatus(int task_id, int status) {
         showDialog();
-        String url = ApiUrl.taskStatusUrl;
+        String url = ApiUrl.taskMutualStatusUrl;
         TaskStatusModel taskStatusModel = new TaskStatusModel(task_id, status);
         OkHttpUtils
                 .postString()
@@ -146,12 +147,7 @@ public class MyApplicationFragment extends BaseFragment {
                             JSONObject jsonObject = new JSONObject(string);
                             int result=jsonObject.getInt("result");
                             if(result==1){
-                                showShort(getString(R.string.toast_matching_success));
-                               /* String orderId=jsonObject.getJSONObject("data").getString("order_id");
-                                Intent intent=new Intent(OrderDetailsActivity.this,OnlinePaymentActivity.class);
-                                intent.putExtra("netType",1);
-                                intent.putExtra("order_id",orderId);
-                                jumpToActivity(intent);*/
+                                showShort(getString(R.string.text_confir_success));
                             }else {
                                 String info= jsonObject.getString("info");
                                 showShort(info);
@@ -165,7 +161,6 @@ public class MyApplicationFragment extends BaseFragment {
 
 
     }
-
 
 
     @Override
@@ -208,7 +203,7 @@ public class MyApplicationFragment extends BaseFragment {
                 switch (itemViewId) {
                     case R.id.btn_finish:
                         if(status==1){
-                            taskStatus(taskId,6);
+                            taskMutualStatus(taskId,3);
                         }else {
                             taskCancel(taskId,position);
                         }

@@ -6,13 +6,17 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.meiriuser.R;
 import com.example.meiriuser.adapter.AddressAdapter;
 import com.example.meiriuser.adapter.HistorySearchAdapter;
@@ -71,6 +75,7 @@ public class SearchActivity extends BaseActivity implements
     private SearchShopAdapter mIntipAdapter;
     String lat;
     String lng;
+    List<TakeOutFoodModel.DataBean> mSPVals;
 
     @Override
     protected int provideContentViewId() {
@@ -120,10 +125,13 @@ public class SearchActivity extends BaseActivity implements
                             if (result == 1) {
                                 TakeOutFoodModel bean = (TakeOutFoodModel) GsonUtil.JSONToObject(response.toString(), TakeOutFoodModel.class);
                                 if (bean.getData() != null) {
-                                    mCurrentTipList.clear();
-                                    mCurrentTipList.addAll(bean.getData());
-                                    mIntipAdapter = new SearchShopAdapter(getApplicationContext(), mCurrentTipList);
-                                    inputtipList.setAdapter(mIntipAdapter);
+                                    if(bean.getData().size()>0){
+                                        mCurrentTipList.clear();
+                                        mCurrentTipList.addAll(bean.getData());
+                                        mIntipAdapter = new SearchShopAdapter(getApplicationContext(), mCurrentTipList);
+                                        inputtipList.setAdapter(mIntipAdapter);
+                                    }
+
                                 }
                             }
                         } catch (JSONException e) {
@@ -188,6 +196,12 @@ public class SearchActivity extends BaseActivity implements
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         if (mCurrentTipList != null) {
+            if(mSPVals==null){
+                mSPVals=new ArrayList<>();
+            }
+            mSPVals.add(mCurrentTipList.get(i));
+            historySearchAdapter.notifyDataSetChanged();
+            PreferenceUtil.saveObject("shopList",mSPVals);
             int storeID=mCurrentTipList.get(i).getStore_id();
             Intent intent = new Intent(SearchActivity.this, FoodActivity.class);
             intent.putExtra(Constant.TYPE,storeID);
@@ -200,11 +214,17 @@ public class SearchActivity extends BaseActivity implements
 
     @Override
     public void initData() {
-    /*    rvHistorySearch.setNestedScrollingEnabled(false);
-      *//*  List<AddressModel> mVals= (List<AddressModel>) PreferenceUtil.readObject("addressList");*//*
+        rvHistorySearch.setNestedScrollingEnabled(false);
+        mSPVals=new ArrayList<>();
         rvHistorySearch.setLayoutManager(new LinearLayoutManager(this));
-      *//*  historySearchAdapter=new HistorySearchAddressAdapter(mVals);*//*
-        rvHistorySearch.setAdapter(historySearchAdapter);*/
+        historySearchAdapter=new HistorySearchAddressAdapter(mSPVals);
+        rvHistorySearch.setAdapter(historySearchAdapter);
+        List<TakeOutFoodModel.DataBean>spVals= (List<TakeOutFoodModel.DataBean>) PreferenceUtil.readObject("shopList");
+        if(spVals!=null){
+            mSPVals.addAll(spVals);
+            historySearchAdapter.notifyDataSetChanged();
+        }
+
     }
 
 
@@ -241,6 +261,42 @@ public class SearchActivity extends BaseActivity implements
 
             }
         });
+        historySearchAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                int itemViewId = view.getId();
+                switch (itemViewId) {
+                    case R.id.line_item:
+                        int storeID=mCurrentTipList.get(position).getStore_id();
+                        Intent intent = new Intent(SearchActivity.this, FoodActivity.class);
+                        intent.putExtra(Constant.TYPE,storeID);
+                        jumpToActivity(intent);
+                        break;
+                    case R.id.iv_cancel:
+                        mSPVals.remove(position);
+                        historySearchAdapter.notifyDataSetChanged();
+                        PreferenceUtil.saveObject("shopList",mSPVals);
+                        break;
+                }
+            }
+        });
+
+
+        /*     etSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                *//*判断是否是“搜索”键*//*
+                if(actionId == EditorInfo.IME_ACTION_SEARCH){
+                    String key = etSearch.getText().toString().trim();
+                    if(TextUtils.isEmpty(key)){
+                        return true;
+                    }
+
+                    return true;
+                }
+                return false;
+            }
+        });*/
     }
 
     @OnClick({R.id.image_search, R.id.tv_search})

@@ -42,6 +42,7 @@ import butterknife.BindView;
 import okhttp3.Call;
 import okhttp3.MediaType;
 import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by admin on 2019/5/28.
@@ -121,7 +122,7 @@ public class IReleasedFragment extends BaseFragment{
     }
 
 
-    public void taskStatus(int task_id, int status) {
+    public void taskStatus(int task_id, final int status, final int pos) {
         showDialog();
         String url = ApiUrl.taskStatusUrl;
         TaskStatusModel taskStatusModel = new TaskStatusModel(task_id, status);
@@ -147,12 +148,14 @@ public class IReleasedFragment extends BaseFragment{
                             JSONObject jsonObject = new JSONObject(string);
                             int result=jsonObject.getInt("result");
                             if(result==1){
-                                showShort(getString(R.string.toast_matching_success));
-                               /* String orderId=jsonObject.getJSONObject("data").getString("order_id");
-                                Intent intent=new Intent(OrderDetailsActivity.this,OnlinePaymentActivity.class);
-                                intent.putExtra("netType",1);
-                                intent.putExtra("order_id",orderId);
-                                jumpToActivity(intent);*/
+                                if(status==6){
+                                    showShort(getString(R.string.toast_matching_success));
+                                }else if(status==7){
+                                    iReleasedModelList.remove(pos);
+                                    iReleasedAdapter.notifyDataSetChanged();
+                                    showShort(getString(R.string.text_cancel_success));
+                                }
+
                             }else {
                                 String info= jsonObject.getString("info");
                                 showShort(info);
@@ -226,20 +229,22 @@ public class IReleasedFragment extends BaseFragment{
                         break;
                     case R.id.btn_state:
                         if(status==5){////已完成待确认（确认支付尾款）
-                            taskStatus(taskId,6);
+                            taskStatus(taskId,6,position);
                         }else if(status==6 && isComment==0){//待评价
 
                         }
                         break;
                     case R.id.btn_cancel_order:
-                        taskCancel(taskId,position);
+                        taskStatus(taskId,7,position);
+                  /*      taskCancel(taskId,position);*/
                         break;
 
                 }
             }
         });
 
-        BusProvider.getBus().toObservable(LoginRefreshEvent.class)
+        BusProvider.getBus()
+                .toObservable(LoginRefreshEvent.class)
                 .subscribe(new Action1<LoginRefreshEvent>() {
                     @Override
                     public void call(LoginRefreshEvent event) {

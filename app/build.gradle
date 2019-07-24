@@ -101,4 +101,6 @@ dependencies {
     implementation 'com.contrarywind:Android-PickerView:4.1.4'
     implementation 'cn.yipianfengye.android:zxing-library:2.2'
     implementation 'com.android.support:multidex:1.0.2'
+  /*  implementation 'com.github.Jay-Goo:RangeSeekBar:v1.1.0'*/
+    implementation 'com.github.kaxi4it:BidirectionalSeekBar:1.0'
 }

@@ -1,18 +1,22 @@
 package com.example.meiriuser.ui.activity;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.meiriuser.R;
 import com.example.meiriuser.base.BaseActivity;
 import com.example.meiriuser.event.AddressSaveChangeEvent;
 import com.example.meiriuser.event.BusProvider;
+import com.example.meiriuser.event.LoginRefreshEvent;
 import com.example.meiriuser.model.AddressModel;
 import com.example.meiriuser.until.Constant;
-import com.example.meiriuser.widget.DoubleSlideSeekBar;
+import com.guyj.BidirectionalSeekBar;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -33,14 +37,16 @@ public class ScreenActivity extends BaseActivity {
     SeekBar progressDistance;
     @BindView(R.id.tv_price_tasks)
     TextView tvPriceTasks;
-  /*  @BindView(R.id.progress_price_tasks)
-    DoubleSlideSeekBar progressPriceTasks;*/
+    @BindView(R.id.progress_price_tasks)
+    BidirectionalSeekBar progressPriceTasks;
     @BindView(R.id.btn_screen)
     Button btnScreen;
     String address;
     int distance;
     int price;
     AddressModel changeaddressModel;
+    int leftPrice=0;
+    int rightPrice=0;
 
     @Override
     protected int provideContentViewId() {
@@ -57,13 +63,14 @@ public class ScreenActivity extends BaseActivity {
     @Override
     public void initData() {
         super.initData();
+
     }
 
     @Override
     public void initListener() {
         super.initListener();
         tvDistance.setText(5+"km");
-        tvPriceTasks.setText(String.format(getString(R.string.text_price),5+""));
+        tvPriceTasks.setText(String.format(getString(R.string.text_price),5+"")+"-"+String.format(getString(R.string.text_price),2000+""));
         progressDistance.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -80,25 +87,20 @@ public class ScreenActivity extends BaseActivity {
             }
         });
 
-       /* progressPriceTasks.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+        progressPriceTasks.setOnSeekBarChangeListener(new BidirectionalSeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-                price=progress+5;
-                tvPriceTasks.setText(String.format(getString(R.string.text_price),price+""));
+            public void onProgressChanged(int leftProgress, int rightProgress) {
+                leftPrice=leftProgress;
+                rightPrice=rightProgress;
+                tvPriceTasks.setText(String.format(getString(R.string.text_price),leftProgress+"")+"-"+String.format(getString(R.string.text_price),rightProgress+""));
             }
+        });
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
 
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });*/
-
-        BusProvider.getBus().toObservable(AddressSaveChangeEvent.class)
+        BusProvider
+                .getBus()
+                .toObservable(AddressSaveChangeEvent.class)
                 .subscribe(new Action1<AddressSaveChangeEvent>() {
                     @Override
                     public void call(AddressSaveChangeEvent newMessageEvent) {
@@ -109,6 +111,10 @@ public class ScreenActivity extends BaseActivity {
 
 
     }
+
+
+
+
 
     @OnClick({R.id.icon_back, R.id.line_task_address, R.id.btn_screen})
     public void onViewClicked(View view) {
@@ -126,7 +132,7 @@ public class ScreenActivity extends BaseActivity {
                 //把返回数据存入Intent
                 intent1.putExtra("address", changeaddressModel);
                 intent1.putExtra("distance", distance);
-                intent1.putExtra("price_tasks", price);
+                intent1.putExtra("price_tasks", leftPrice+","+rightPrice);
                 //设置返回数据
                 setResult(1, intent1);
                 //关闭Activity

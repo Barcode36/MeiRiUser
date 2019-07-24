@@ -322,7 +322,7 @@ public class OrderDetailsActivity extends BaseActivity {
                 break;
             case R.id.line_shop_name:
                 Intent intent = new Intent(OrderDetailsActivity.this, FoodActivity.class);
-                intent.putExtra(Constant.TYPE,storeID);
+                intent.putExtra(Constant.TYPE,Integer.valueOf(storeID));
                 jumpToActivity(intent);
                 break;
             case R.id.line_select_address:
@@ -386,6 +386,10 @@ public class OrderDetailsActivity extends BaseActivity {
             tvAddress.setText(addressListModel.getAddress());
             tvContactInfor.setText(addressListModel.getConsignee()+"    "+addressListModel.getMobile());
             addressId=String.valueOf(addressListModel.getAddress_id());
+            if(!TextUtils.isEmpty(addressListModel.getLat()) && !TextUtils.isEmpty(addressListModel.getLng())){
+                getOrderPrice(Integer.valueOf(storeID),infoBeanList,Float.valueOf(addressListModel.getLat()),Float.valueOf(addressListModel.getLng()));
+            }
+
         }
 
     }

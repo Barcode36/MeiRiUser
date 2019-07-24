@@ -21,6 +21,7 @@ import com.example.meiriuser.model.AddressListModel;
 import com.example.meiriuser.model.AddressModel;
 import com.example.meiriuser.model.FoodDetailsModel;
 import com.example.meiriuser.model.OrderQuetyListModel;
+import com.example.meiriuser.model.net.OrderPriceModel;
 import com.example.meiriuser.net.ApiUrl;
 import com.example.meiriuser.ui.activity.FoodDetailsActivity;
 import com.example.meiriuser.ui.activity.LoginActivity;
@@ -74,6 +75,7 @@ public class CommodityFragment extends BaseFragment {
     OrderQuetyListModel orderQuetyListModelList;
     List<OrderQuetyListModel.ListBean> listBeans;
     private String distribuFee;
+    int goodNum=0;
 
     public void setCommodityInfo(String storeID,String storeName,String storeAddress,String distribuFee){
         this.storeID=storeID;
@@ -213,7 +215,8 @@ public class CommodityFragment extends BaseFragment {
                             totalPrice=totalPrice-price;
                             tvClickPrice.setText(totalPrice>0.0?"共"+totalPrice+"元":"0元起送");
                             tvClickPrice.setBackground(totalPrice>0.0?getResources().getDrawable(R.drawable.shape_cart_right_green_bg):getResources().getDrawable(R.drawable.shape_cart_right_gray_bg));
-                            tvShopCartNum.setText(totalPrice>0.0?String.format(getString(R.string.text_shop_cart_num),count+""):String.format(getString(R.string.text_empty_shopping)));
+                            goodNum--;
+                            tvShopCartNum.setText(goodNum>0?String.format(getString(R.string.text_shop_cart_num),goodNum+""):String.format(getString(R.string.text_empty_shopping)));
                         }
                         break;
 
@@ -224,7 +227,8 @@ public class CommodityFragment extends BaseFragment {
                         totalPrice=totalPrice+price;
                         tvClickPrice.setText(totalPrice>0.0?"共"+totalPrice+"元":"0元起送");
                         tvClickPrice.setBackground(totalPrice>0.0?getResources().getDrawable(R.drawable.shape_cart_right_green_bg):getResources().getDrawable(R.drawable.shape_cart_right_gray_bg));
-                        tvShopCartNum.setText(totalPrice>0.0?String.format(getString(R.string.text_shop_cart_num),count+""):String.format(getString(R.string.text_empty_shopping)));
+                        goodNum++;
+                        tvShopCartNum.setText(goodNum>0?String.format(getString(R.string.text_shop_cart_num),goodNum+""):String.format(getString(R.string.text_empty_shopping)));
                         break;
 
                 }
@@ -252,7 +256,7 @@ public class CommodityFragment extends BaseFragment {
                         orderQuetyListModel.setId(dataBeanList.get(j).getGoods_id());
                         orderQuetyListModel.setNum(dataBeanList.get(j).getClick_count());
                         orderQuetyListModel.setFoodName(dataBeanList.get(j).getGoods_name());
-                        orderQuetyListModel.setFoodUrl(dataBeanList.get(j).getGoods_thumb());
+                        orderQuetyListModel.setFoodUrl(dataBeanList.get(j).getGoods_img());
                         orderQuetyListModel.setPrice(dataBeanList.get(j).getShop_price());
                       /*  orderQuetyListModel.setDistribuFee(dataBeanList.get(j).getD());
                         orderQuetyListModel.setFullReduction(dataBeanList.get(j).getGoods_thumb());*/
@@ -260,6 +264,8 @@ public class CommodityFragment extends BaseFragment {
                     }
                 }
             }
+
+            /*goodNum+=OrderQuetyListModels.getName().get(i).getNum();*/
             OrderQuetyListModel model=new OrderQuetyListModel();
             model.setName(OrderQuetyListModels);
             Intent intent=new Intent(getActivity(),OrderDetailsActivity.class);
@@ -273,4 +279,9 @@ public class CommodityFragment extends BaseFragment {
         }
 
     }
+
+
+    /*public int  disCalculation(int pos){
+        return dataBeanList.get(pos).getClick_count()
+    }*/
 }

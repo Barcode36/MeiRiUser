@@ -4,31 +4,45 @@ import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.meiriuser.R;
 import com.example.meiriuser.adapter.AddressListAdapter;
 import com.example.meiriuser.base.BaseActivity;
+import com.example.meiriuser.dialog.DialogUtil;
+import com.example.meiriuser.dialog.IDialogCallBack;
 import com.example.meiriuser.event.BusProvider;
 import com.example.meiriuser.event.RefreshListEvent;
 import com.example.meiriuser.model.AddressListModel;
+import com.example.meiriuser.model.net.ModifyAddressModel;
 import com.example.meiriuser.net.ApiUrl;
 import com.example.meiriuser.net.HttpStatus;
 import com.example.meiriuser.until.Constant;
 import com.example.meiriuser.until.GsonUtil;
 import com.example.meiriuser.until.PreferenceUtil;
+import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 import rx.functions.Action1;
 
 /**
@@ -100,6 +114,9 @@ public class ReceivingAddressActivity extends BaseActivity {
             }
         });
 
+
+
+
         getAddressList(token);
 
         BusProvider.getBus().toObservable(RefreshListEvent.class)
@@ -111,6 +128,13 @@ public class ReceivingAddressActivity extends BaseActivity {
                 });
 
     }
+
+
+
+
+
+
+
 
 
     /**

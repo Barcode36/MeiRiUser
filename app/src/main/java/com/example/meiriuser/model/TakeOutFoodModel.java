@@ -1,5 +1,7 @@
 package com.example.meiriuser.model;
 
+import com.example.meiriuser.ui.activity.SearchActivity;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -54,7 +56,7 @@ public class TakeOutFoodModel implements Serializable{
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * store_id : 1
          * catgory_id : 3

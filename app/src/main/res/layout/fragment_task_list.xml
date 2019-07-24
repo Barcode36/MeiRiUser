@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_fillet_green_13dp"
-            android:text="清洁,园艺"
+            android:text="5,2000"
             android:textColor="@color/colorWhite"
             android:paddingLeft="19dp"
             android:paddingRight="19dp"

@@ -31,7 +31,7 @@ public class OrderFinishDetailsAdapter extends BaseQuickAdapter<OrderDetailsMode
         helper.setText(R.id.tv_food_content,item.getGoods_attr());
         helper.setText(R.id.tv_num,"x"+item.getGoods_number());
         helper.setText(R.id.tv_price,String.format(mContext.getResources().getString(R.string.text_price),item.getGoods_price()));
-    /*    Glide.with(mContext)
+      /*  Glide.with(mContext)
                 .load(item.get())
                 .transform(new CenterCrop(mContext),new GlideRoundTransform(mContext,2))
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE)

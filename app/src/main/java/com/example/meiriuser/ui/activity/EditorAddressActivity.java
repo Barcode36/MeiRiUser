@@ -106,7 +106,7 @@ public class EditorAddressActivity extends BaseActivity {
             if (infoBean != null) {
                 addressID =infoBean.getAddress_id();
                 etContactsName.setText(infoBean.getConsignee());
-                etContactPhone.setText(infoBean.getTel());
+                etContactPhone.setText(infoBean.getMobile());
                 tvContactAddress.setText(infoBean.getCountry() + "" + infoBean.getProvince() + "" + infoBean.getCity() + "" + infoBean.getDistrict());
                 etDetailsAddress.setText(infoBean.getAddress());
                 String sign_building = infoBean.getNote();

@@ -48,6 +48,8 @@
             android:textColorHint="@color/colorHint"
             android:textColor="@color/colorTv"
             android:layout_toRightOf="@id/image_search"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
             android:hint="输入商家名称"
             />
 

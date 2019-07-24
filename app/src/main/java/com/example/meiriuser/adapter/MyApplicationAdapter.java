@@ -63,7 +63,7 @@ public class MyApplicationAdapter  extends BaseQuickAdapter<TaskListModel.DataBe
                 .into(ivHead);
 
         int status=item.getStatus();
-
+        int receipt_status=item.getReceipt_status();
         if(status==2 || status==3){//匹配中（取消任务）
             helper.setBackgroundRes(R.id.btn_finish,R.drawable.shape_fillet_green_stroke_6dp);
             helper.setText(R.id.btn_finish,"取消申请");
@@ -74,9 +74,11 @@ public class MyApplicationAdapter  extends BaseQuickAdapter<TaskListModel.DataBe
             helper.setTextColor(R.id.btn_finish, Color.parseColor("#FFFFFF"));
             helper.setText(R.id.btn_finish,"已完成");
 
-        }else if(status==7){//已取消
+        }else if(status==7|| status==6){//已取消
             helper.setVisible(R.id.btn_finish,false);
 
+        }else if(receipt_status==4|| receipt_status==3|| receipt_status==5){
+            helper.setVisible(R.id.btn_finish,false);
         }
 
         helper.addOnClickListener(R.id.btn_finish);

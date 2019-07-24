@@ -141,6 +141,9 @@ public class ApiUrl {
     //互助--任务申请取消
     public static String taskCancelUrl=COMMAN_URL+"/mutual_aid/task_cancel";
 
+    //设置任务状态
+    public static String taskMutualStatusUrl=COMMAN_URL+"/mutual_aid/task_status";
+
     //获取用户账单地址/设置用户账单地址
     public static String billAddressUrl=COMMAN_URL+"/users/bill_address";
 
